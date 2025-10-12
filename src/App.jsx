@@ -1,12 +1,11 @@
-import './App.css'
+import Clima from "./components/Clima/Clima.jsx";
 
 function App() {
-
   return (
-    <>
-      <p>João Miguel passou por aqui</p>
-    </>
-  )
+    <div>
+      <Clima />
+    </div>
+  );
 }
 
-export default App
+export default App;
