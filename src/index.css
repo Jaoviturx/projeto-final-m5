@@ -15,7 +15,9 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--verdeFundo);
 }
-
+html{
+  overflow-x: hidden;
+}
 a {
   font-weight: 500;
   color: #646cff;
