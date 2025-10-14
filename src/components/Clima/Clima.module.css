@@ -1,62 +1,109 @@
 :root {
-  --corPrincipal: #004643;
-  --corSecundaria: #f9bc60;
-  --corTerciaria: #abd1c6;
-  --corBase: #e8e4e6;
+  --corPrincipal: #004643;    /* Verde Escuro */
+  --corSecundaria: #f9bc60;   /* Dourado/Acento */
+  --corTerciaria: #abd1c6;    /* Verde Água Claro (Fundo Card - Clima) */
+  --corBase: #e8e4e6;         /* Cinza Muito Claro (Fundo Main) */
 }
-.main{
+
+/* Base Comum */
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px 20px;
+  background-color: var(--corBase);
+  color: var(--corPrincipal);
+  min-height: 100vh;
 }
+
+.main h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--corPrincipal);
+  border-bottom: 3px solid var(--corSecundaria);
+  padding-bottom: 10px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
-
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
 }
 
+/* Cards do Clima: Fundo na Cor Terciária */
 .card {
-  background-color: var(--corTerciaria);
-  border-radius: 12px;
-  padding: 16px;
-  margin: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--corTerciaria); /* Diferente do Desmatamento! */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  flex-grow: 1; 
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid var(--corSecundaria);
 }
 
+/* Conteúdo do Card */
 .title {
   color: var(--corPrincipal);
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed var(--corPrincipal); /* Borda mais escura para contraste */
+  padding-bottom: 8px;
 }
 
 .description {
-  font-size: 14px;
-  margin: 8px 0;
-  color: #001e1d;
+  font-size: 1rem;
+  margin: 10px 0;
+  color: var(--corPrincipal);
+  font-weight: 500;
 }
 
 .year {
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--corPrincipal);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #4e4200;
+  margin-top: 15px;
 }
 
 .impact {
-  font-size: 13px;
-  color: #001e1d;
+  font-size: 0.9rem;
+  color: var(--corPrincipal);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Status (Loading e Erro) */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .loading {
-  text-align: center;
-  font-size: 16px;
   color: var(--corPrincipal);
+  background-color: var(--corTerciaria);
+}
+
+.error {
+  color: #8b0000;
+  background-color: #ffdada;
+  border: 2px solid #8b0000;
 }
