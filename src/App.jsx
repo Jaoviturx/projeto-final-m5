@@ -1,7 +1,9 @@
 import Clima from "./components/Clima/Clima.jsx";
 import Menu from "./components/Menu/Menu.jsx";
 import Desmatamento from "./components/Desmatamento/Desmatamento.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import Banner from "./components/Banner/Banner.jsx";
+
 function App() {
   return (
     <div>
@@ -9,6 +11,7 @@ function App() {
       <Banner />
       <Clima />
       <Desmatamento />
+      <Footer />
     </div>
   );
 }
